@@ -1,0 +1,22 @@
+def findEvenNumbers(digits):
+    answer = []
+    answer2 = []
+    string_digits = [str(digit) for digit in digits]
+
+    for i in string_digits:
+        for j in string_digits:
+            for k in string_digits:
+                if (i + j + k)[0] != '0':
+                    answer.append(i + j + k)
+
+    for num in answer:
+        if num[0] != 0:
+            num = int(num)
+            if num % 2 == 0:
+                if num not in answer2:
+                    answer2.append(num)
+
+    print(answer2)
+
+
+findEvenNumbers([2, 2, 7, 0, 0, 0, 4, 3, 2, 6, 9, 9, 9, 9, 5, 2])
